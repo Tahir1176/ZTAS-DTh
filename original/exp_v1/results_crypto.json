@@ -1,0 +1,138 @@
+{
+ "sig": {
+  "Ed25519": {
+   "sign": {
+    "median_us": 28.726,
+    "p95_us": 36.41034999999995
+   },
+   "verify": {
+    "median_us": 102.364,
+    "p95_us": 129.35330000000002
+   },
+   "sig_B": 64,
+   "pk_B": 32
+  },
+  "ECDSA-P256": {
+   "sign": {
+    "median_us": 28.5315,
+    "p95_us": 40.768449999999966
+   },
+   "verify": {
+    "median_us": 92.3375,
+    "p95_us": 110.85645
+   },
+   "sig_B": 71,
+   "pk_B": 64
+  },
+  "ML-DSA-44": {
+   "sign": {
+    "median_us": 6488.762,
+    "p95_us": 10956.8537
+   },
+   "verify": {
+    "median_us": 114.773,
+    "p95_us": 163.6771
+   },
+   "sig_B": 2420,
+   "pk_B": 1312
+  },
+  "ML-DSA-65": {
+   "sign": {
+    "median_us": 8894.815999999999,
+    "p95_us": 13666.3885
+   },
+   "verify": {
+    "median_us": 194.52949999999998,
+    "p95_us": 303.0874
+   },
+   "sig_B": 3309,
+   "pk_B": 1952
+  },
+  "SLH-DSA-SHA2-128f": {
+   "sign": {
+    "median_us": 13191.2615,
+    "p95_us": 14878.9994
+   },
+   "verify": {
+    "median_us": 855.2725,
+    "p95_us": 894.99605
+   },
+   "sig_B": 17088,
+   "pk_B": 32
+  }
+ },
+ "kem": {
+  "X25519": {
+   "encaps": {
+    "median_us": 30.487499999999997,
+    "p95_us": 41.46389999999998
+   },
+   "ct_B": 32,
+   "pk_B": 32
+  },
+  "ML-KEM-768": {
+   "encaps": {
+    "median_us": 62.537,
+    "p95_us": 88.14405
+   },
+   "decaps": {
+    "median_us": 77.4385,
+    "p95_us": 97.18294999999999
+   },
+   "ct_B": 1088,
+   "pk_B": 1184
+  }
+ },
+ "chain": {
+  "median_us": 0.484,
+  "p95_us": 0.589
+ },
+ "batch": [
+  {
+   "batch": 1,
+   "total_us": 8847.7695,
+   "per_record_us": 8847.7695,
+   "records_per_s": 113.02283586840728,
+   "sig_bytes_per_record": 3309.0
+  },
+  {
+   "batch": 4,
+   "total_us": 8990.1585,
+   "per_record_us": 2247.539625,
+   "records_per_s": 444.93097646721134,
+   "sig_bytes_per_record": 891.25
+  },
+  {
+   "batch": 16,
+   "total_us": 8659.0535,
+   "per_record_us": 541.19084375,
+   "records_per_s": 1847.7770116560662,
+   "sig_bytes_per_record": 334.8125
+  },
+  {
+   "batch": 64,
+   "total_us": 8942.2675,
+   "per_record_us": 139.7229296875,
+   "records_per_s": 7157.021415429587,
+   "sig_bytes_per_record": 243.703125
+  },
+  {
+   "batch": 256,
+   "total_us": 9096.831,
+   "per_record_us": 35.53449609375,
+   "records_per_s": 28141.668235894456,
+   "sig_bytes_per_record": 268.92578125
+  },
+  {
+   "batch": 1024,
+   "total_us": 9509.7165,
+   "per_record_us": 9.28683251953125,
+   "records_per_s": 107679.34038832808,
+   "sig_bytes_per_record": 323.2314453125
+  }
+ ],
+ "policy": {
+  "median_us": 1.107,
+  "p95_us": 1.354
+ }
+}

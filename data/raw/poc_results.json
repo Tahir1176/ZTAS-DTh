@@ -1,0 +1,200 @@
+{
+ "scenarios": {
+  "S2_post_signing_alteration": {
+   "decision": "deny",
+   "reason": "content hash mismatch (post-signing alteration)",
+   "client_us": 1850.4340000617958
+  },
+  "S3_replay": {
+   "decision": "deny",
+   "reason": "replayed or reordered record",
+   "client_us": 1536.5620001830393
+  },
+  "S4_lineage_unreleased_parent": {
+   "decision": "deny",
+   "reason": "lineage policy: missing or unreleased parent",
+   "client_us": 2464.830000008078
+  },
+  "S4b_lineage_wrong_actor_role": {
+   "decision": "deny",
+   "reason": "lineage policy: actor role not authorised",
+   "client_us": 2069.7789998394
+  },
+  "S5_validly_signed_malicious_supplier_artifact": {
+   "risk": 12.2,
+   "decision": "allow",
+   "reason": "allow",
+   "evidence": 0.0,
+   "client_us": 4030.4520000518096
+  },
+  "S6_compromised_device_sequence": [
+   {
+    "decision": "deny",
+    "reason": "deny_stepup_failed",
+    "risk": 47.5,
+    "evidence": 1.0
+   },
+   {
+    "decision": "deny",
+    "reason": "deny_stepup_failed",
+    "risk": 47.5,
+    "evidence": 1.9999662876984292
+   },
+   {
+    "decision": "deny",
+    "reason": "deny_stepup_failed",
+    "risk": 47.5,
+    "evidence": 2.9998784283194957
+   },
+   {
+    "decision": "deny",
+    "reason": "isolation requested; awaiting operator approval",
+    "risk": 47.5,
+    "evidence": 3.9997627042476465
+   },
+   {
+    "decision": "deny",
+    "reason": "isolation pending human approval",
+    "risk": null,
+    "evidence": null
+   },
+   {
+    "decision": "deny",
+    "reason": "isolation pending human approval",
+    "risk": null,
+    "evidence": null
+   }
+  ],
+  "S6_status_before_approval": {
+   "quarantined": [],
+   "pending": [
+    "plc07"
+   ]
+  },
+  "S6_status_after_approval": {
+   "quarantined": [
+    "plc07"
+   ],
+   "pending": []
+  },
+  "S6_request_after_quarantine": {
+   "decision": "deny",
+   "reason": "quarantined",
+   "client_us": 1671.8159999982163
+  },
+  "S8a_segment_active": {
+   "risk": 12.2,
+   "decision": "allow",
+   "reason": "allow",
+   "evidence": 0.0,
+   "client_us": 2112.1280001352716
+  },
+  "S8b_segment_expired": {
+   "decision": "deny",
+   "reason": "no active segment",
+   "client_us": 2430.394999919372
+  },
+  "S7_revocation": {
+   "final": "identity revoked",
+   "propagation_delay_s": 1.0201280117034912,
+   "requests_until_effective": 20,
+   "note": "bounded by PEP revocation-list refresh interval (1 s in PoC)"
+  },
+  "S9_pdp_unavailable": {
+   "decision": "deny",
+   "reason": "PDP unavailable: fail-closed",
+   "client_us": 4383.30500014672
+  }
+ },
+ "note": "controlled software proof-of-concept on one host; not an industrial deployment",
+ "latency": {
+  "end_to_end_with_artifact": {
+   "n": 1000,
+   "median_us": 3031.515500083515,
+   "p95_us": 4211.403999988761,
+   "p99_us": 5105.458000116414,
+   "mean_us": 3090.7557650009494
+  },
+  "end_to_end_no_artifact": {
+   "n": 1000,
+   "median_us": 1458.7245000257099,
+   "p95_us": 2522.4969999726454,
+   "p99_us": 3290.4400000006717,
+   "mean_us": 1599.905219995435
+  },
+  "direct_to_twin_baseline": {
+   "n": 1000,
+   "median_us": 201.53049990767613,
+   "p95_us": 298.26200011484616,
+   "p99_us": 505.34399997559376,
+   "mean_us": 214.93192600223665
+  },
+  "components": {
+   "token_us": {
+    "n": 1000,
+    "median_us": 166.65999987708346,
+    "p95_us": 235.53100004392036,
+    "p99_us": 402.62099992105504,
+    "mean_us": 179.4514739974602
+   },
+   "segment_us": {
+    "n": 1000,
+    "median_us": 380.4819999686515,
+    "p95_us": 614.5930001366651,
+    "p99_us": 833.8450002156605,
+    "mean_us": 401.5373250024368
+   },
+   "provenance_us": {
+    "n": 1000,
+    "median_us": 1265.2755000317484,
+    "p95_us": 1737.3969999425753,
+    "p99_us": 2011.0320001549553,
+    "mean_us": 1294.823829995039
+   },
+   "pdp_us": {
+    "n": 1000,
+    "median_us": 396.42849992560514,
+    "p95_us": 608.1870001253264,
+    "p99_us": 963.5459998662554,
+    "mean_us": 426.54885299612033
+   },
+   "forward_us": {
+    "n": 1000,
+    "median_us": 328.24549987253704,
+    "p95_us": 571.0559998988174,
+    "p99_us": 750.5290000153764,
+    "mean_us": 358.88780600203063
+   },
+   "pep_total_us": {
+    "n": 1000,
+    "median_us": 2613.884999959737,
+    "p95_us": 3599.2840000744764,
+    "p99_us": 4272.014999969542,
+    "mean_us": 2664.857635995986
+   }
+  }
+ },
+ "resources": {
+  "idp": {
+   "cpu_s": 0.017478999999999998,
+   "max_rss_kb": 29744
+  },
+  "seg": {
+   "cpu_s": 0.40810599999999997,
+   "max_rss_kb": 25448
+  },
+  "prov": {
+   "cpu_s": 1.290127,
+   "max_rss_kb": 28456
+  },
+  "twin": {
+   "cpu_s": 0.47676299999999994,
+   "max_rss_kb": 25192
+  },
+  "pep": {
+   "cpu_s": 2.2708,
+   "max_rss_kb": 30184
+  }
+ },
+ "events_logged": 14
+}

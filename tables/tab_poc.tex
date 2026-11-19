@@ -1,0 +1,16 @@
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Path / stage (1000 requests) & Median (ms) & p95 (ms) & p99 (ms) \\
+\midrule
+Direct call to twin (no controls) & 0.20 & 0.30 & 0.51 \\
+End-to-end, no artifact & 1.46 & 2.52 & 3.29 \\
+End-to-end, with artifact & 3.03 & 4.21 & 5.11 \\
+\midrule
+Token + revocation check & 0.17 & 0.24 & 0.40 \\
+Segment check (RPC) & 0.38 & 0.61 & 0.83 \\
+Provenance + lineage check & 1.27 & 1.74 & 2.01 \\
+Policy decision (RPC) & 0.40 & 0.61 & 0.96 \\
+Forward to twin (RPC) & 0.33 & 0.57 & 0.75 \\
+PEP total & 2.61 & 3.60 & 4.27 \\
+\bottomrule
+\end{tabular}

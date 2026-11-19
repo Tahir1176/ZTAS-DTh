@@ -1,0 +1,40 @@
+[M1] full checks, key never compromised: OK  states=280 expected=OK -> PASS
+[M1] full checks, key compromise allowed (assumption violated): VIOLATION integrity states=29 expected=VIOLATION -> PASS
+     (1, frozenset(), False, frozenset(), 0, 0, (), False)
+     (1, frozenset(), True, frozenset(), 0, 0, (), False)
+     (1, frozenset({(1, 'b', 0, True, False)}), True, frozenset(), 0, 0, (), False)
+     (1, frozenset({(1, 'b', 0, True, False)}), True, frozenset(), 0, 1, ((1, 'b', 0, True, False),), False)
+[M1] full checks, key compromise allowed: replay/order: OK  states=11760 expected=OK -> PASS
+[M1] NEG: no sequence check: VIOLATION no_replay states=16 expected=VIOLATION -> PASS
+     (1, frozenset(), False, frozenset(), 0, 0, (), False)
+     (2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 0, (), False)
+     (2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 1, ((1, 'g', 0, True, True),), False)
+     (2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 1, ((1, 'g', 0, True, True), (1, 'g', 0, True, True)), False)
+[M1] NEG: no signature check: VIOLATION integrity states=14 expected=VIOLATION -> PASS
+     (1, frozenset(), False, frozenset(), 0, 0, (), False)
+     (2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 0, (), False)
+     (2, frozenset({(1, 'b', 0, False, False)}), False, frozenset(), 0, 0, (), False)
+     (2, frozenset({(1, 'b', 0, False, False)}), False, frozenset(), 0, 1, ((1, 'b', 0, False, False),), False)
+[M1] revocation enforcement: OK  states=11760 expected=OK -> PASS
+[M1] NEG: no revocation check: VIOLATION revocation_enforced states=84 expected=VIOLATION -> PASS
+     ((1, frozenset(), False, frozenset(), 0, 0, (), False), False)
+     ((2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 0, (), False), False)
+     ((2, frozenset({(1, 'g', 0, True, True)}), True, frozenset(), 0, 0, (), False), False)
+     ((2, frozenset({(1, 'g', 0, True, True)}), False, frozenset({0}), 1, 0, (), False), False)
+     ((2, frozenset({(1, 'g', 0, True, True)}), False, frozenset({0}), 1, 1, ((1, 'g', 0, True, True),), False), True)
+[M2] continuous evaluation + plane separation: OK  states=312 expected=OK -> PASS
+[M2] NEG: cached session decision: VIOLATION containment_after_isolation states=73 expected=VIOLATION -> PASS
+     (False, frozenset(), False, frozenset(), (), ())
+     (True, frozenset(), False, frozenset(), (), ())
+     (True, frozenset(), True, frozenset(), (), ())
+     (True, frozenset(), True, frozenset({'dev'}), (('dev', True, False),), ())
+     (True, frozenset({'dev'}), True, frozenset({'dev'}), (('dev', True, False),), ())
+     (True, frozenset({'dev'}), True, frozenset({'dev'}), (('dev', True, False), ('dev', True, True)), ())
+[M2] NEG: data-plane principals may change policy: VIOLATION plane_separation states=4 expected=VIOLATION -> PASS
+     (False, frozenset(), False, frozenset(), (), ())
+     (False, frozenset(), False, frozenset(), (), ('eng',))
+[M3] v1 Merkle (odd-node duplication, no length binding): VIOLATION distinct_lists_distinct_roots states=40 expected=VIOLATION -> PASS
+     ['a', 'a', 'a']
+     ['a', 'a', 'a', 'a']
+[M3] v2 Merkle (odd-node promotion + signed leaf count): OK  states=363 expected=OK -> PASS
+total time 0.2s

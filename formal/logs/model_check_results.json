@@ -1,0 +1,155 @@
+[
+ {
+  "model": "M1",
+  "config": "full checks, key never compromised",
+  "expected": "OK",
+  "result": "OK",
+  "states": 280,
+  "distinct": 280,
+  "matches_expectation": true,
+  "counterexample": null
+ },
+ {
+  "model": "M1",
+  "config": "full checks, key compromise allowed (assumption violated)",
+  "expected": "VIOLATION",
+  "result": "VIOLATION",
+  "invariant": "integrity",
+  "states": 29,
+  "matches_expectation": true,
+  "counterexample": [
+   "(1, frozenset(), False, frozenset(), 0, 0, (), False)",
+   "(1, frozenset(), True, frozenset(), 0, 0, (), False)",
+   "(1, frozenset({(1, 'b', 0, True, False)}), True, frozenset(), 0, 0, (), False)",
+   "(1, frozenset({(1, 'b', 0, True, False)}), True, frozenset(), 0, 1, ((1, 'b', 0, True, False),), False)"
+  ]
+ },
+ {
+  "model": "M1",
+  "config": "full checks, key compromise allowed: replay/order",
+  "expected": "OK",
+  "result": "OK",
+  "states": 11760,
+  "distinct": 11760,
+  "matches_expectation": true,
+  "counterexample": null
+ },
+ {
+  "model": "M1",
+  "config": "NEG: no sequence check",
+  "expected": "VIOLATION",
+  "result": "VIOLATION",
+  "invariant": "no_replay",
+  "states": 16,
+  "matches_expectation": true,
+  "counterexample": [
+   "(1, frozenset(), False, frozenset(), 0, 0, (), False)",
+   "(2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 0, (), False)",
+   "(2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 1, ((1, 'g', 0, True, True),), False)",
+   "(2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 1, ((1, 'g', 0, True, True), (1, 'g', 0, True, True)), False)"
+  ]
+ },
+ {
+  "model": "M1",
+  "config": "NEG: no signature check",
+  "expected": "VIOLATION",
+  "result": "VIOLATION",
+  "invariant": "integrity",
+  "states": 14,
+  "matches_expectation": true,
+  "counterexample": [
+   "(1, frozenset(), False, frozenset(), 0, 0, (), False)",
+   "(2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 0, (), False)",
+   "(2, frozenset({(1, 'b', 0, False, False)}), False, frozenset(), 0, 0, (), False)",
+   "(2, frozenset({(1, 'b', 0, False, False)}), False, frozenset(), 0, 1, ((1, 'b', 0, False, False),), False)"
+  ]
+ },
+ {
+  "model": "M1",
+  "config": "revocation enforcement",
+  "expected": "OK",
+  "result": "OK",
+  "states": 11760,
+  "distinct": 11760,
+  "matches_expectation": true,
+  "counterexample": null
+ },
+ {
+  "model": "M1",
+  "config": "NEG: no revocation check",
+  "expected": "VIOLATION",
+  "result": "VIOLATION",
+  "invariant": "revocation_enforced",
+  "states": 84,
+  "matches_expectation": true,
+  "counterexample": [
+   "((1, frozenset(), False, frozenset(), 0, 0, (), False), False)",
+   "((2, frozenset({(1, 'g', 0, True, True)}), False, frozenset(), 0, 0, (), False), False)",
+   "((2, frozenset({(1, 'g', 0, True, True)}), True, frozenset(), 0, 0, (), False), False)",
+   "((2, frozenset({(1, 'g', 0, True, True)}), False, frozenset({0}), 1, 0, (), False), False)",
+   "((2, frozenset({(1, 'g', 0, True, True)}), False, frozenset({0}), 1, 1, ((1, 'g', 0, True, True),), False), True)"
+  ]
+ },
+ {
+  "model": "M2",
+  "config": "continuous evaluation + plane separation",
+  "expected": "OK",
+  "result": "OK",
+  "states": 312,
+  "distinct": 312,
+  "matches_expectation": true,
+  "counterexample": null
+ },
+ {
+  "model": "M2",
+  "config": "NEG: cached session decision",
+  "expected": "VIOLATION",
+  "result": "VIOLATION",
+  "invariant": "containment_after_isolation",
+  "states": 73,
+  "matches_expectation": true,
+  "counterexample": [
+   "(False, frozenset(), False, frozenset(), (), ())",
+   "(True, frozenset(), False, frozenset(), (), ())",
+   "(True, frozenset(), True, frozenset(), (), ())",
+   "(True, frozenset(), True, frozenset({'dev'}), (('dev', True, False),), ())",
+   "(True, frozenset({'dev'}), True, frozenset({'dev'}), (('dev', True, False),), ())",
+   "(True, frozenset({'dev'}), True, frozenset({'dev'}), (('dev', True, False), ('dev', True, True)), ())"
+  ]
+ },
+ {
+  "model": "M2",
+  "config": "NEG: data-plane principals may change policy",
+  "expected": "VIOLATION",
+  "result": "VIOLATION",
+  "invariant": "plane_separation",
+  "states": 4,
+  "matches_expectation": true,
+  "counterexample": [
+   "(False, frozenset(), False, frozenset(), (), ())",
+   "(False, frozenset(), False, frozenset(), (), ('eng',))"
+  ]
+ },
+ {
+  "model": "M3",
+  "config": "v1 Merkle (odd-node duplication, no length binding)",
+  "expected": "VIOLATION",
+  "result": "VIOLATION",
+  "invariant": "distinct_lists_distinct_roots",
+  "states": 40,
+  "matches_expectation": true,
+  "counterexample": [
+   "['a', 'a', 'a']",
+   "['a', 'a', 'a', 'a']"
+  ]
+ },
+ {
+  "model": "M3",
+  "config": "v2 Merkle (odd-node promotion + signed leaf count)",
+  "expected": "OK",
+  "result": "OK",
+  "states": 363,
+  "matches_expectation": true,
+  "counterexample": null
+ }
+]
