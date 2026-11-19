@@ -1,9 +1,9 @@
 {
-  "title": "ZTAS-DTh: code and data for a zero-trust security architecture for the digital thread (v1.0.0)",
+  "title": "ZTAS-DTh: code and data for a zero-trust security architecture for the digital thread (v1.1.0)",
   "upload_type": "software",
-  "version": "1.0.0",
-  "publication_date": "2026-11-18",
-  "description": "<p>Code, configurations, random seeds, raw and processed data, an executed notebook, bounded model-checking logs and a single-host software proof of concept accompanying the manuscript <em>ZTAS-DTh: A Lifecycle-Spanning Zero-Trust Security Architecture for the Digital Thread &mdash; Design, Bounded Formal Analysis, and Simulation-Based Evaluation</em> (submitted to IEEE Transactions on Industrial Informatics).</p><p>Contents: paired Monte-Carlo attack-propagation simulation over nine synthetic digital-thread topology families (174,000 simulated attacks) with hierarchical-bootstrap statistics; provenance-verification sensitivity analysis; risk-engine evaluation under six synthetic score distributions; post-quantum (ML-DSA, ML-KEM, SLH-DSA) and classical cryptographic micro-benchmarks with raw timing samples and a batching-latency model; explicit-state bounded model checking with negative controls; proof-of-concept services and results.</p><p><strong>Scope:</strong> all detection probabilities in the simulation are modelling assumptions and all score distributions are synthetic; benchmarks were measured on a server CPU; no industrial measurement or deployment is included.</p>",
+  "version": "1.1.0",
+  "publication_date": "2026-11-20",
+  "description": "<p>Code, configurations, random seeds, raw and processed data, executed notebooks, bounded model-checking logs, a single-host software proof of concept and its test results accompanying the manuscript <em>ZTAS-DTh: A Lifecycle-Spanning Zero-Trust Security Architecture for the Digital Thread &mdash; Design, Bounded Formal Analysis, and Simulation-Based Evaluation</em>.</p><p><strong>v1.1.0</strong> adds the second-revision package (<code>revision_v1.1.0/ZTAS-DTh_v1.1.0_revision_package.zip</code>): joint sensitivity analysis over eleven assumed parameters (Latin hypercube, three control regimes, Sobol indices; 612,000 paired simulations); risk-engine evaluation at 0.1&ndash;20% prevalence with calibration-transfer and cost-sensitive thresholds; continuous-time evidence-accumulation study (52,500 runs); model M4 for asynchronous enforcement with negative controls; proof-of-concept concurrency and failure tests (v3 implementation with switchable fixes); cryptographic re-analysis and queueing model with bursty arrivals; attacker-profile experiment; clean-checkout reproduction of v1.0.0; manuscript, supplementary material, response to reviewers and a SHA-256 manifest of every file.</p><p><strong>Scope:</strong> all control-effectiveness probabilities are modelling assumptions, all risk-score distributions are synthetic, benchmarks were measured on a shared server VM, and no industrial measurement or deployment is included.</p>",
   "creators": [
     {
       "name": "Tahir, Muhammad",
@@ -30,6 +30,7 @@
     "data provenance",
     "post-quantum cryptography",
     "Monte Carlo simulation",
+    "sensitivity analysis",
     "model checking",
     "Industry 4.0"
   ],
