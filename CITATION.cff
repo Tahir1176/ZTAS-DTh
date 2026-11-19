@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this software or data, please cite it as below."
 title: "ZTAS-DTh: code and data for a zero-trust security architecture for the digital thread"
-version: 1.0.0
+version: 1.1.0
 repository-code: "https://github.com/Tahir1176/ZTAS-DTh"
-doi: 10.5281/zenodo.24372430
-date-released: 2026-11-18
+doi: 10.5281/zenodo.24372429
+date-released: 2026-11-20
 license: MIT
 authors:
   - family-names: Tahir
