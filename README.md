@@ -1,5 +1,7 @@
 # ZTAS-DTh: Zero-Trust Security Architecture for the Digital Thread
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24372430.svg)](https://doi.org/10.5281/zenodo.24372430)
+
 Code and data accompanying the manuscript
 
 > M. Tahir, W. Ahmed, A. Hassan and I. Rashid, "ZTAS-DTh: A Lifecycle-Spanning Zero-Trust Security Architecture for
