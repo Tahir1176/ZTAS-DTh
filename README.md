@@ -1,6 +1,8 @@
 # ZTAS-DTh: Zero-Trust Security Architecture for the Digital Thread
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24372430.svg)](https://doi.org/10.5281/zenodo.24372430)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24372429.svg)](https://doi.org/10.5281/zenodo.24372429)
+
+> **Release v1.1.0 (second revision).** The complete revision package (joint sensitivity analysis, extended risk-engine evaluation, continuous-time evidence study, formal model M4, proof-of-concept v3 with concurrency and failure tests, cryptographic and queueing re-analysis, attacker profiles, clean-checkout reproduction of v1.0.0, revised manuscript, supplementary material, response to reviewers and a SHA-256 manifest) is in [`revision_v1.1.0/ZTAS-DTh_v1.1.0_revision_package.zip`](revision_v1.1.0/ZTAS-DTh_v1.1.0_revision_package.zip). Unzip it and start with its `README.md`. The DOI above always resolves to the latest version; v1.0.0 is doi:10.5281/zenodo.24372430.
 
 Code and data accompanying the manuscript
 
