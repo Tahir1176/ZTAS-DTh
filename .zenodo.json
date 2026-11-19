@@ -1,0 +1,40 @@
+{
+  "title": "ZTAS-DTh: code and data for a zero-trust security architecture for the digital thread (v1.0.0)",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "publication_date": "2026-11-18",
+  "description": "<p>Code, configurations, random seeds, raw and processed data, an executed notebook, bounded model-checking logs and a single-host software proof of concept accompanying the manuscript <em>ZTAS-DTh: A Lifecycle-Spanning Zero-Trust Security Architecture for the Digital Thread &mdash; Design, Bounded Formal Analysis, and Simulation-Based Evaluation</em> (submitted to IEEE Transactions on Industrial Informatics).</p><p>Contents: paired Monte-Carlo attack-propagation simulation over nine synthetic digital-thread topology families (174,000 simulated attacks) with hierarchical-bootstrap statistics; provenance-verification sensitivity analysis; risk-engine evaluation under six synthetic score distributions; post-quantum (ML-DSA, ML-KEM, SLH-DSA) and classical cryptographic micro-benchmarks with raw timing samples and a batching-latency model; explicit-state bounded model checking with negative controls; proof-of-concept services and results.</p><p><strong>Scope:</strong> all detection probabilities in the simulation are modelling assumptions and all score distributions are synthetic; benchmarks were measured on a server CPU; no industrial measurement or deployment is included.</p>",
+  "creators": [
+    {
+      "name": "Tahir, Muhammad",
+      "affiliation": "Military College of Signals, National University of Sciences and Technology (NUST), Pakistan"
+    },
+    {
+      "name": "Ahmed, Waqas",
+      "affiliation": "Military College of Signals, National University of Sciences and Technology (NUST), Pakistan"
+    },
+    {
+      "name": "Hassan, Ammar",
+      "affiliation": "Military College of Signals, National University of Sciences and Technology (NUST), Pakistan"
+    },
+    {
+      "name": "Rashid, Imran",
+      "affiliation": "Military College of Signals, National University of Sciences and Technology (NUST), Pakistan"
+    }
+  ],
+  "keywords": [
+    "digital thread",
+    "digital twin",
+    "zero trust",
+    "industrial cybersecurity",
+    "data provenance",
+    "post-quantum cryptography",
+    "Monte Carlo simulation",
+    "model checking",
+    "Industry 4.0"
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "notes": "Code under MIT; data, figures, tables and documentation under CC BY 4.0 (see LICENSE-DATA)."
+}
